@@ -4,10 +4,29 @@
 
 @section('main-content')
 <div class="container">
+
+    @if($errors->any())
+        <div class="alert alert-danger center col-lg-5">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
    <div class="row">
     <div class="col-lg-3">
         <h3 class="mb-3">Create Item</h3>
-        <form action="/item/submit" method="post">
+        <form action="{{ route('item-form') }}" method="post">
+            @csrf
+            <div class="form-group">
+                <label for="category">Select Category of Items</label>
+                <select name="categoryName" class="form-control">
+                    <option></option>
+                </select>
+            </div>
+
             <div class="form-group">
                 <label for="name">Item Name</label>
                 <input type="text" name="name" placeholder="name" id="name" class="form-control">
@@ -23,21 +42,33 @@
                 <input type="number" name="quality" placeholder="Quality" id="quality" class="form-control">
             </div>
 
-            <button type="submit" class="btn btn-success">Add</button>
+            <button type="submit" class="btn btn-success mb-5" name="buttonItm">Add</button>
         </form>
-    </div>
 
+        @if(isset($_POST['buttonItm']))
+            <div class="alert alert-success mt-3" role="alert">
+                Item was successfully added
+            </div>
+        @endif
+    </div>
 
     <div class="col-lg-3" style="margin-left:10rem">
         <h3 class="mb-3">Create Category</h3>
-        <form action="/category/submit" method="post">
+        <form action="{{ route('category-form') }}" method="post">
+            @csrf
             <div class="form-group">
                <label for="value">Category Name</label>
-               <input type="text" name="cat_name" placeholder="Category Name" id="cat_name" class="form-control">
+               <input type="text" name="cat_name" placeholder="Category" id="cat_name" class="form-control">
             </div>
 
-            <button type="submit" class="btn btn-success">Add</button>
+            <button type="submit" class="btn btn-success" name="buttonCtgr">Add</button>
         </form>
+
+        @if(isset($_POST['buttonCtgr']))
+            <div class="alert alert-success mt-3" role="alert">
+                Category was successfully added
+            </div>
+        @endif
     </div>
 
    </div>
