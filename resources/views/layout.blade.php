@@ -14,7 +14,7 @@
     <p class="h5 my-0 me-md-auto fw-normal">Gilded Rose</p>
     <nav class="my-2 my-md-0 me-md-3 ml-5">
         <a class="p-2 text-white" href="{{ route('create') }}">Create</a>
-        <a class="p-2 text-white" href="{{ route('update') }}">Update</a>
+        <a class="p-2 text-white" href="{{ route('item-data') }}">Update</a>
         <a class="p-2 text-white" href="#">Return Items</a>
     </nav>
 </header>

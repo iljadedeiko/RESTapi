@@ -15,7 +15,7 @@
         </div>
     @endif
 
-   <div class="row">
+        <div class="row">
     <div class="col-lg-3">
         <h3 class="mb-3">Create Item</h3>
         <form action="{{ route('item-form') }}" method="post">
@@ -25,11 +25,12 @@
                 <select name="categoryName" class="form-control">
                     <option></option>
                 </select>
+
             </div>
 
             <div class="form-group">
                 <label for="name">Item Name</label>
-                <input type="text" name="name" placeholder="name" id="name" class="form-control">
+                <input type="text" name="name" placeholder="Name" id="name" class="form-control">
             </div>
 
             <div class="form-group">
@@ -45,9 +46,9 @@
             <button type="submit" class="btn btn-success mb-5" name="buttonItm">Add</button>
         </form>
 
-        @if(isset($_POST['buttonItm']))
+        @if(session('successItm'))
             <div class="alert alert-success mt-3" role="alert">
-                Item was successfully added
+                {{ session('successItm') }}
             </div>
         @endif
     </div>
@@ -64,9 +65,9 @@
             <button type="submit" class="btn btn-success" name="buttonCtgr">Add</button>
         </form>
 
-        @if(isset($_POST['buttonCtgr']))
+        @if(session('successCtgr'))
             <div class="alert alert-success mt-3" role="alert">
-                Category was successfully added
+                {{ session('successCtgr') }}
             </div>
         @endif
     </div>

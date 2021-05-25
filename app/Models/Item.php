@@ -4,8 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Item extends Model
 {
-    use HasFactory;
+    use Notifiable;
+
+    public function categories()
+    {
+        return $this->belongsTo('Models\Category');
+    }
 }
