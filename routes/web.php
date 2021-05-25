@@ -15,4 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('create');
-})->name('create');
+});
+
+Route::get('/update', function () {
+    return view('update');
+});
+
+//Route::get('/item/{id}{name}', function($id, $name) {
+//    return view('item');
+//});

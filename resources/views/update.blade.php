@@ -1,14 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    @include('inc.header')
-    <p>hihuihu</p>
-</body>
-</html>
+@extends('layout')
+
+@section('title-block') Update Item @endsection
+
+@section('main-content')
+    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet, cum cupiditate dolore eius eos expedita ipsam laboriosam laudantium molestias natus numquam quam rem repellendus rerum similique vero voluptas, voluptate!</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cum dolore doloremque facere ratione repudiandae. Atque culpa eligendi enim expedita inventore maxime neque nesciunt pariatur placeat quas, quis, quisquam voluptate.</p>
+@endsection
