@@ -23,9 +23,12 @@
                     <div class="form-group">
                         <label for="category">Select Category of Items</label>
                         <select name="categoryName" class="form-control">
-                            <option></option>
+{{--                            @foreach($data as $ctrgs)--}}
+                                <option value="{{ $data->id }}">{{ $data->category_name }}</option>
+{{--                            @endforeach--}}
                         </select>
                     </div>
+
 
                     <div class="form-group">
                         <label for="name">Item Name</label>

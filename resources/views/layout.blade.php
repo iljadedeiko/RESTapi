@@ -15,7 +15,6 @@
     <nav class="my-2 my-md-0 me-md-3 ml-5">
         <a class="p-2 text-white" href="{{ route('create') }}">Create</a>
         <a class="p-2 text-white" href="{{ route('item-data') }}">Update</a>
-        <a class="p-2 text-white" href="#">Return Items</a>
     </nav>
 </header>
 <div class="container mt-5">

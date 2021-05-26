@@ -22,7 +22,7 @@ class CreateItemsTable extends Migration
             $table->timestamps();
 
             $table->foreign('category_id')
-                ->references('id')
+                ->references('cat_id')
                 ->on('categories')
                 ->onDelete('cascade');
         });

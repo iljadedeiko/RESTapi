@@ -25,7 +25,7 @@
         @foreach($dataItm as $itm)
         <tr>
             <th scope="row">{{ $itm->id }}</th>
-            <td>{{ $itm->category_id }}</td>
+            <td>{{ $itm->category_name }}</td>
             <td>{{ $itm->name }}</td>
             <td>{{ $itm->value }}</td>
             <td>{{ $itm->quality }}</td>
@@ -34,14 +34,14 @@
             <td><a href="{{ route('one-item', $itm->id) }}"><button class="btn btn-success">Update</button></a></td>
         </tr>
         @endforeach
-{{--        <div class="form-group">--}}
-{{--            <label for="category">Select Category of Items</label>--}}
-{{--            <select name="categoryName" class="form-control">--}}
-{{--                @foreach($dataCat as $ctrgs)--}}
-{{--                    <option value="{{ $ctrgs->id }}">{{ $ctrgs->name }}</option>--}}
-{{--                @endforeach--}}
-{{--            </select>--}}
-{{--        </div>--}}
+        <div class="form-group">
+            <label for="category">Select Category of Items</label>
+            <select name="categoryName" class="form-control">
+                @foreach($dataItm as $ctrgs)
+                    <option value="{{ $ctrgs->cat_id }}">{{ $ctrgs->category_name }}</option>
+                @endforeach
+            </select>
+        </div>
         </tbody>
     </table>
 @endsection

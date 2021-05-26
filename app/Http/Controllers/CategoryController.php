@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function submitCtgr(CategoryRequest $reqCtgr)
     {
         $category = new Category();
-        $category->name = $reqCtgr->input('cat_name');
+        $category->category_name = $reqCtgr->input('cat_name');
 
         $category->save();
 
@@ -24,9 +24,4 @@ class CategoryController extends Controller
         $category = new Category();
         return view('create', ['dataCtgr' => $category->all()]);
     }
-
-//    public function ctgrDataforItms() {
-//        $category = new Category();
-//        return view('update', ['dataCat' => $category->all()]);
-//    }
 }

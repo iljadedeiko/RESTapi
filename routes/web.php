@@ -28,5 +28,3 @@ Route::post(
 Route::get('/', 'App\Http\Controllers\CategoryController@ctgrData')
     ->name('create');
 
-//Route::get('/update/allItems', 'App\Http\Controllers\CategoryController@ctgrDataforItms')
-//    ->name('crgt-for-items');
