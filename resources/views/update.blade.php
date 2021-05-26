@@ -53,7 +53,8 @@
                     </select>
                 </div>
                 <div class="form-group col-lg-3">
-                        <a href="{{ route('category-delete', $ctrgs->id) }}"><button class="btn btn-danger mt-4">Delete Category</button></a>
+                        <a href="{{ route('category-delete', $ctrgs->cat_id) }}"><button class="btn btn-danger mt-4">Delete Category</button></a>
+{{--                                                        $data->$cat_id--}}
                 </div>
             </div>
         </div>

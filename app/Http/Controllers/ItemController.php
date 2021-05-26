@@ -30,6 +30,7 @@ class ItemController extends Controller {
         return view('update', ['dataItm' => DB::table('categories')
             ->join('items', 'categories.cat_id', "=", 'items.category_id')
             ->get()]);
+        //->all();
     }
 
     public function getOneItm($id) {
