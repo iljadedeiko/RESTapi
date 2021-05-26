@@ -24,7 +24,7 @@
                         <label for="category">Select Category of Items</label>
                         <select name="categoryName" class="form-control">
 {{--                            @foreach($data as $ctrgs)--}}
-                                <option value="{{ $data->id }}">{{ $data->category_name }}</option>
+                                <option value="{{ $data->cat_id }}">{{ $data->category_name }}</option>
 {{--                            @endforeach--}}
                         </select>
                     </div>

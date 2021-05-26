@@ -24,4 +24,9 @@ class CategoryController extends Controller
         $category = new Category();
         return view('create', ['dataCtgr' => $category->all()]);
     }
+
+    public function geleteCategory($id) {
+        Category::find($id)->delete();
+        return redirect()->route('item-data')->with('deleteCat', 'Category was deleted');
+    }
 }

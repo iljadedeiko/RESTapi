@@ -28,3 +28,8 @@ Route::post(
 Route::get('/', 'App\Http\Controllers\CategoryController@ctgrData')
     ->name('create');
 
+Route::get(
+    '/update/allItems/{$id}/delete',
+    'App\Http\Controllers\CategoryController@geleteCategory')
+    ->name('category-delete');
+

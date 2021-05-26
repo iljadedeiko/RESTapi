@@ -53,5 +53,4 @@ class ItemController extends Controller {
 
         return redirect()->route('item-data')->with('successItm', 'Item was successfully updated');
     }
-
 }
