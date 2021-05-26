@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
+use App\Models\Item;
 
 class CategoryController extends Controller
 {
@@ -22,6 +23,6 @@ class CategoryController extends Controller
 
     public function ctgrData() {
         $category = new Category();
-        return view('layout', ['data' => $category->all()]);
+        return view('create', ['dataCtgr' => $category->all()]);
     }
 }

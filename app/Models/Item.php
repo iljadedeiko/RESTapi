@@ -8,10 +8,10 @@ use Illuminate\Notifications\Notifiable;
 
 class Item extends Model
 {
-    use Notifiable;
+    use HasFactory;
 
     public function categories()
     {
-        return $this->belongsTo('Models\Category');
+        return $this->belongsTo('App\Models\Category');
     }
 }

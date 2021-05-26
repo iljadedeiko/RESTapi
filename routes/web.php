@@ -8,10 +8,6 @@ Route::get('/', function () {
     return view('create');
 })->name('create');
 
-//Route::get('/update/all', function () {
-//    return view('update');
-//})->name('update');
-
 Route::post('/item/submit', 'App\Http\Controllers\ItemController@submitItm')
     ->name('item-form');
 
@@ -21,5 +17,15 @@ Route::post('/category/submit', 'App\Http\Controllers\CategoryController@submitC
 Route::get('/update/allItems', 'App\Http\Controllers\ItemController@itemsData')
     ->name('item-data');
 
-Route::get('/layout', 'App\Http\Controllers\CategoryController@ctgrData')
-    ->name('ctgr-data');
+Route::get(
+    '/update/allItems/{id}',
+    'App\Http\Controllers\ItemController@getOneItm')
+    ->name('one-item');
+
+Route::post(
+    '/update/allItems/{id}',
+    'App\Http\Controllers\ItemController@updatedItemSubmit')
+    ->name('updated-item-submit');
+
+Route::get('/create', 'App\Http\Controllers\CategoryController@ctgrData')
+    ->name('ctgr-data'); //TODO...select options
