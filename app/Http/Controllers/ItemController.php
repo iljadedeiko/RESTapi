@@ -22,15 +22,19 @@ class ItemController extends Controller {
         $item->save();
 
         return redirect()->route('create')->with('successItm', 'Item was successfully added');
+        //$item = Item::create($id->all());
+        //return response()->json($item, 201);
     }
 
     public function itemsData() {
-         //$item = new Item;
-         //$category = new Category;
         return view('update', ['dataItm' => DB::table('categories')
             ->join('items', 'categories.cat_id', "=", 'items.category_id')
             ->get()]);
-        //->all();
+       //->all();
+//        $item = DB::table('categories')
+//           ->join('items', 'categories.cat_id', "=", 'items.category_id')
+//           ->get();
+//        return response()->json($item, 200);
     }
 
     public function getOneItm($id) {
@@ -53,5 +57,7 @@ class ItemController extends Controller {
         $item->save();
 
         return redirect()->route('item-data')->with('successItm', 'Item was successfully updated');
+//        $item = Item::find($id);
+//        return response()->json($item, 201);
     }
 }
