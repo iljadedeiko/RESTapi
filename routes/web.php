@@ -2,11 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-
-Route::get('/', function () {
-    return view('create');
-})->name('create');
+//Route::get('/', function () {
+//    return view('create');
+//})->name('create');
 
 Route::post('/item/submit', 'App\Http\Controllers\ItemController@submitItm')
     ->name('item-form');
@@ -27,5 +25,8 @@ Route::post(
     'App\Http\Controllers\ItemController@updatedItemSubmit')
     ->name('updated-item-submit');
 
-Route::get('/create', 'App\Http\Controllers\CategoryController@ctgrData')
-    ->name('ctgr-data'); //TODO...select options
+Route::get('/', 'App\Http\Controllers\CategoryController@ctgrData')
+    ->name('create');
+
+//Route::get('/update/allItems', 'App\Http\Controllers\CategoryController@ctgrDataforItms')
+//    ->name('crgt-for-items');

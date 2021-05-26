@@ -20,14 +20,14 @@
         <h3 class="mb-3">Create Item</h3>
         <form action="{{ route('item-form') }}" method="post">
             @csrf
-{{--            <div class="form-group">--}}
-{{--                <label for="category">Select Category of Items</label>--}}
-{{--                <select name="categoryName" class="form-control">--}}
-{{--                    @foreach($dataCtgr as $ctrgs)--}}
-{{--                    <option value="{{ $ctrgs->id }}">{{ $ctrgs->name }}</option>--}}
-{{--                    @endforeach--}}
-{{--                </select>--}}
-{{--            </div>--}}
+            <div class="form-group">
+                <label for="category">Select Category of Items</label>
+                <select name="categoryName" class="form-control">
+                    @foreach($dataCtgr as $ctrgs)
+                    <option value="{{ $ctrgs->id }}">{{ $ctrgs->name }}</option>
+                    @endforeach
+                </select>
+            </div>
 
             <div class="form-group">
                 <label for="name">Item Name</label>

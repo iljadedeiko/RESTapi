@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Http\Requests\ItemRequest;
 use App\Models\Item;
+use App\Models\Category;
 
 class ItemController extends Controller {
 
     public function submitItm(ItemRequest $reqItm) {
 
         $item = new Item();
-        //$item->category_id = $reqItm->input('categoryName');
+        $item->category_id = $reqItm->input('categoryName');
         $item->name = $reqItm->input('name');
         $item->value = $reqItm->input('value');
         $item->quality = $reqItm->input('quality');
@@ -35,7 +36,7 @@ class ItemController extends Controller {
     public function updatedItemSubmit($id, ItemRequest $reqItm) {
 
         $item = Item::find($id);
-        //$item->category_id = $reqItm->input('categoryName');
+        $item->category_id = $reqItm->input('categoryName');
         $item->name = $reqItm->input('name');
         $item->value = $reqItm->input('value');
         $item->quality = $reqItm->input('quality');

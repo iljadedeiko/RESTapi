@@ -37,7 +37,7 @@
 {{--        <div class="form-group">--}}
 {{--            <label for="category">Select Category of Items</label>--}}
 {{--            <select name="categoryName" class="form-control">--}}
-{{--                @foreach($dataCtgr as $ctrgs)--}}
+{{--                @foreach($dataCat as $ctrgs)--}}
 {{--                    <option value="{{ $ctrgs->id }}">{{ $ctrgs->name }}</option>--}}
 {{--                @endforeach--}}
 {{--            </select>--}}
